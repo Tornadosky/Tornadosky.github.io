@@ -488,9 +488,14 @@
               <div class="col-lg-10 mx-auto">
                 <div class="modal-body">
                   <h2>Mensa Companion</h2>
-                  <p class="lead">A speech assistant for helping students to get information from the canteen</p>
-                  <p class="lead">This project is written with <a href="https://rasa.com/">Rasa</a> package.</p>
-                  <p class="lead">More detailed project description coming soon!<br> In the meantime, check out some of my other projects.</p>
+                  <p class="lead">"Mensa Companion" is an assistant designed to provide students, faculty, and staff at a university with accurate and up-to-date information about the canteen's menu, meal prices, and other details.</p>
+                  <p class="lead">This project is written with <a href="https://rasa.com/">Rasa</a> package for Natural Language Processing and Understanding.</p>
+                  <p class="lead">I did a lot of analysis and preparation in order to create a fully-functional, accurate and intelligent speech assistant, which provides user with all the necessary info.</p>
+                  <p class="lead">Here is the example of the overall dialog flow:</p>
+                  <img class="img-fluid d-block mx-auto" src="/img/rasa.png" alt="">
+                  <p class="lead">And this is schema of all Use Cases:</p>
+                  <img class="img-fluid d-block mx-auto" src="/img/rasa-1.png" alt="">
+                  <p class="lead">This project also has a lot of interesting information in <a href="https://github.com/Tornadosky/Assistance-system/wiki">GitHub Wiki</a>.</p>
                   <div class="lead mb-4">
                     <b>View this project on GitHub: </b>
                     <a href="https://github.com/Tornadosky/Assistance-system" target="blank">https://github.com/Tornadosky/Assistance-system</a>
@@ -519,10 +524,10 @@
               <div class="col-lg-10 mx-auto">
                 <div class="modal-body">
                   <h2>Cooking Recipes Management System</h2>
-                  <p class="lead">Backend for web application to manage cooking recipes, users and user-recipe information.</p>
-                  <p class="lead">This project consists of creating Backend API to manage recipes and users, creating and maintaining MongoDB database and writing Unit tests with JUnit.</p>
+                  <p class="lead">Web application to manage cooking recipes, users and user-recipe information.</p>
+                  <p class="lead">I created Backend API in Spring Boot (Java) to manage recipes and users, created and maintained MongoDB database and wrote Unit tests with JUnit.</p>
                   <p class="lead">This project is a university group project. My team was 12 people with 4 Departments: <b>Frontend</b>, <b>Backend</b>, <b>Android</b> and <b>QA/DevOps</b>. Since we have had internal problems in DevOps team, I also helped to containerize the app with Docker and deploy it to Microsoft Azure.</p>
-                  <p class="lead">We worked as an Agile team in a Scrum environment. Besides the Backend part, I was a leader of 4 departments, managing team tasks in Jira by creating Product backlog, assigning tasks, managing sprints and communicating with Professor, who played the role of a client.</p>
+                  <p class="lead">We worked as an Agile team in a Scrum environment. Besides the Backend part, I was a leader of 4 departments, managing some team tasks in Jira by creating Product backlog, assigning tasks, managing sprints and communicating with Professor, who played the role of a client.</p>
                   <p class="lead">Here you can see how the Figma design looks like:</p>
                   <img class="img-fluid d-block mx-auto" src="/img/recipes_design.png" alt="">
                   <p class="lead">More detailed project description coming soon!<br> In the meantime, check out some of my other projects.</p>
@@ -557,7 +562,8 @@
                   <p class="lead">Solve Diophantine Equations (those where variables are integers) with constraints.</p>
                   <p class="lead">For this project I had to work intensively to create a working BNF grammar and a well-structured class-based parsing program.</p>
                   <p class="lead">By providing txt file with some structure, program parses this text to symbolic expressions. After the parsing the heavy-lifting part of actually solving the system is given to Z3 solver.</p>
-                  <p class="lead">Here is one example of input-output of the program:</p>
+                  <p class="lead">Here are some example of input-output of the program:</p>
+                  <p class="lead">Where no solutions are found:</p>
                   <pre style="text-align:left"><code>
 Solve
 x + y + z = 10,
@@ -569,6 +575,21 @@ z < 0.
                   <pre style="text-align:left"><code>
 >>> sol = solve(”sys.txt”)
 No solution!
+                  </code></pre>
+
+                  <p class="lead">Where at least one solution is found:</p>
+                  <pre style="text-align:left"><code>
+Solve
+x + y + z = 10,
+x - z = 5
+such that
+x > 5 or x < -5 and y > 0,
+z < 0.
+                  </code></pre>
+                  <pre style="text-align:left"><code>
+>>> sol = solve(”sys.txt”)
+>>> sol
+{’x’: -6, ’y’: 27, ’z’: -11}
                   </code></pre>
 
                   <div class="lead mb-4">
@@ -674,9 +695,9 @@ No solution!
               <div class="col-lg-10 mx-auto">
                 <div class="modal-body">
                   <h2>Gnosis ChatBot</h2>
-                  <p class="lead">A React ChatBot to help users to make orders and get general imaginary pizzeria info. Chat is accessible <a href="https://gnosisai.azurewebsites.net/">here</a> (Due to rare maintenance can work not as intended)</p>
+                  <p class="lead">A ChatBot written in React to help users to make orders and get general pizzeria info. Chat is accessible <a href="https://gnosisai.azurewebsites.net/">here</a> (may take a while to load).</p>
                   <img class="img-fluid d-block mx-auto" src="/img/gnosis.png" alt="Gnosis ChatBot">
-                  <p class="lead">This project was mostly learning React framework, working with Node.js, hosting with Microsoft Azure and using Microsoft LUIS to analyze user input.</p>
+                  <p class="lead">This project was mostly learning React framework, working with Node.js, hosting with Microsoft Azure and using Microsoft LUIS (Language Understanding) to analyze user input.</p>
                   <div class="lead mb-4">
                     <b>View this project on GitHub: </b>
                     <a href="https://github.com/Tornadosky/Chatbot-Gnosis" target="blank">https://github.com/Tornadosky/Chatbot-Gnosis</a>
