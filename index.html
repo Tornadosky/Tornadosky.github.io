@@ -229,7 +229,7 @@
               <i class="fa fa-code fa-2x" style="padding-top:16px"></i>
             </span>
             <h4>
-              <b>JavaScript, HTML, CSS</b>
+              <b>Node.js, HTML, CSS</b>
             </h4>
             <p class="text-faded mb-0">With a combined <b>2 years</b> of experience from personal projects, I often develop full-stack applications, consisting of HTML/JavaScript/CSS, and a Node.js/MongoDB backend, e.g. <a data-toggle="modal" href="#portfolioModal7">Pizza Chatbot</a> and <a data-toggle="modal" href="#portfolioModal3">cooking recipes management system</a>.</p>
           </div>
@@ -241,15 +241,6 @@
               <b>C++</b>
             </h4>
             <p class="text-faded mb-0">I have around <b>1 year</b> of experience programming in C++. My C++ projects include different small projects, e.g. students management system and some more.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
-              <i class="fa icon-nodejs fa-2x" style="padding-top:24px; padding-left:16px"></i>
-            </span>
-            <h4>
-              <b>Node.js</b>
-            </h4>
-            <p class="text-faded mb-0">I have good knowledge of Node.js and many of its modules, including Express, Socket.io, Axios, Bcrypt and have created some applications using these technologies, including <a data-toggle="modal" href="#portfolioModal7">Pizza Chatbot</a>.</p>
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
@@ -375,17 +366,6 @@
             </a>
           </div>
           <div class="col-lg-4">
-            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal10">
-              <span class="caption">
-                <span class="caption-content">
-                  <h4>Seam Carver</h4>
-                  <p class="mb-0">Advanced image resizing technique</p>
-                </span>
-              </span>
-              <img class="img-fluid portfolio-img" src="/img/seamcarver.png" alt="">
-            </a>
-          </div>
-          <div class="col-lg-4">
             <a class="portfolio-item" data-toggle="modal" href="#portfolioModal8">
               <span class="caption">
                 <span class="caption-content">
@@ -416,6 +396,14 @@
           </div>
         </div>
         <br>
+        <div class="row text-center">
+          <div class="col-lg-12">
+            <a href="/doc/urkunde.pdf" class="lead" target="blank">
+              <h5 class="mb-0">Academic achievements in "Artificial Intelligence" &#8212; Deggendorf Institute of Technology</h5></a>
+            <p class="lead" style="line-height:26px"> <a href="/doc/urkunde.pdf" download="urkunde.pdf">Download <i class="fa fa-download"></i></a></p>
+            </span>
+          </div>
+        </div>
         <div class="row text-center">
           <div class="col-lg-12">
             <a href="/doc/365DS.pdf" class="lead" target="blank">
@@ -506,7 +494,36 @@
                   <h2>NVIDIA Jetbot gestures recognition</h2>
                   <p class="lead"><a href="https://jetbot.org/master/">Jetbot</a> is an open-source robot based on NVIDIA Jetson Nano.</p>
                   <p class="lead">Project Topic: Jetbot gestures recognition. The main idea is to make robot to classify several gestures. When specific gesture is recognized, robot responds with some action. Easy to scale by adding new gestures and actions.</p>
-                  <p class="lead">More detailed project description coming soon!<br> In the meantime, check out some of my other projects.</p>
+                  <p class="lead">The link to the presentation can be found <a href="https://www.canva.com/design/DAFmOXtyisY/ai55aSjFnVO90tTON6ZBCg/view" rel="noopener noreferrer" target="_blank">here</a>.</p>
+                  <p class="lead">The project consists of several parts. First, physical parts were assembled together and the robot was equipped with all the relevant software on SD card. The 4 main functions of the robot are:</p>
+                  <p class="lead">
+                    <ul class="lead" style="padding-left:30px">
+                      <li class="lead" style="font-size: 14pt; text-align: left;"><b>Gestures recognition</b></li>
+                      <li class="lead" style="font-size: 14pt; text-align: left;"><b>Collision avoidance</b></li>
+                      <li class="lead" style="font-size: 14pt; text-align: left;"><b>Object tracking</b></li>
+                      <li class="lead" style="font-size: 14pt; text-align: left;"><b>General logic</b></li>
+                    </ul>
+                  </p>
+                  <p class="lead">The robot is controlled via the Jupyter Notebook. The image resolution of a camera is small. However, it is suitable for using transfer learning (224x224).</p>
+                  <h4>Collision Avoidance</h4>
+                  <img class="img-fluid d-block mx-auto" style="width: 400px;height: 250px; border: 6px solid #ccc;" src="/img/collision_avoidance.gif" alt="Collision Avoidance Gif">
+
+                  <h4>Gestures Recognition</h4>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div style="text-align: center;">
+                        <h6>Go Left Gesture</h6>
+                        <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/go_left.gif" alt="Go Left Gif">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div style="text-align: center;">
+                        <h6>Go Circles Gesture</h6>
+                        <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/go_circles.gif" alt="Go Circles Gif">
+                      </div>
+                    </div>
+                  </div>
+
                   <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                     <i class="fa fa-times"></i> Close Project</a>
                 </div>
@@ -532,10 +549,10 @@
                   <h2>Mensa Companion</h2>
                   <p class="lead">"Mensa Companion" is an assistant designed to provide students, faculty, and staff at a university with accurate and up-to-date information about the canteen's menu, meal prices, and other details.</p>
                   <p class="lead">This project is written with <a href="https://rasa.com/">Rasa</a> package for Natural Language Processing and Understanding.</p>
-                  <p class="lead">I did a lot of analysis and preparation in order to create a fully-functional, accurate and intelligent speech assistant, which provides user with all the necessary info.</p>
+                  <p class="lead">By analysing and preparing data it became possible to create a fully-functional, accurate and intelligent speech assistant, which provides user with all the necessary info.</p>
                   <p class="lead">Here is the example of the overall dialog flow:</p>
                   <img class="img-fluid d-block mx-auto" src="/img/rasa.png" alt="">
-                  <p class="lead">And this is schema of all Use Cases:</p>
+                  <p class="lead">And this is schema of all Use Cases in combination with User Personas:</p>
                   <img class="img-fluid d-block mx-auto" src="/img/rasa-1.png" alt="">
                   <p class="lead">This project also has a lot of interesting information in <a href="https://github.com/Tornadosky/Assistance-system/wiki">GitHub Wiki</a>.</p>
                   <div class="lead mb-4">
@@ -570,19 +587,38 @@
                   <p class="lead">I created Backend API in Spring Boot (Java) to manage recipes and users, created and maintained MongoDB database and wrote Unit tests with JUnit.</p>
                   <p class="lead">This project is a university group project. My team was 12 people with 4 Departments: <b>Frontend</b>, <b>Backend</b>, <b>Android</b> and <b>QA/DevOps</b>. Since we have had internal problems in DevOps team, I also helped to containerize the app with Docker and deploy it to Microsoft Azure.</p>
                   <p class="lead">We worked as an Agile team in a Scrum environment. Besides the Backend part, I was a leader of 4 departments, managing some team tasks in Jira by creating Product backlog, assigning tasks, managing sprints and communicating with Professor, who played the role of a client.</p>
-                  <p class="lead">Here you can see how the Figma design looks like:</p>
+                  <h3>Figma Design</h3>
+                  <p></p>
                   <img class="img-fluid d-block mx-auto" src="/img/recipes_design.png" alt="">
-                  <p class="lead">Simplified UML diagram for the backend structure:</p>
+
+                  <h3>Simplified UML diagram for the backend structure:</h3>
+                  <p></p>
                   <img class="img-fluid d-block mx-auto" src="/img/UML.png" alt="">
-                  <p class="lead">Android application written in Kotlin:</p>
-                  <img class="img-fluid d-block mx-auto" style="width: 280px; height: 560px; float: left; border: 4px solid #4b4545; margin: 10px" src="/img/android_menu.png" alt="">
-                  <img class="img-fluid d-block mx-auto" style="width: 280px; height: 560px; float: left; border: 4px solid #4b4545; margin: 10px" src="/img/android_single_recipe.jpg" alt="">
-                  <img class="img-fluid d-block mx-auto" style="width: 280px; height: 560px; float: left; border: 4px solid #4b4545; margin: 10px" src="/img/android_login.jpg" alt="">
-                  <img class="img-fluid d-block mx-auto" style="width: 280px; height: 560px; float: left; border: 4px solid #4b4545; margin: 10px" src="/img/android_dark.jpg" alt="">
-                  <img class="img-fluid d-block mx-auto" style="width: 280px; height: 560px; border: 4px solid #4b4545; margin: 2px" src="/img/android_categories.png" alt="">
+
+                  <h3>Android application written in Kotlin:</h3>
+                  <p></p>
+                  <div class="row">
+                    <div class="col-md-4 col-lg-4 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/android_menu.png" alt="Android Menu">
+                    </div>
+                    <div class="col-md-4 col-lg-4 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/android_single_recipe.jpg" alt="Android Single Recipe">
+                    </div>
+                    <div class="col-md-4 col-lg-4 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/android_login.jpg" alt="Android Login">
+                    </div>
+                    <div class="col-md-4 col-lg-4 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/android_dark.jpg" alt="Android Dark Theme">
+                    </div>
+                    <div class="col-md-4 col-lg-4 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/android_categories.png" alt="Android Categories">
+                    </div>
+                    <div class="col-md-12 col-lg-12 mb-4">
+                      <img class="img-fluid mx-auto d-block mb-4 img-thumbnail" src="/img/recipe-combo.png" alt="Android Collage">
+                    </div>
+                  </div>
+
                   <hr>
-                  <hr>
-                  <p class="lead">More detailed project description coming soon!<br> In the meantime, check out some of my other projects.</p>
                   <div class="lead mb-4">
                     <b>View this project on GitHub: </b>
                     <a href="https://github.com/Tornadosky/recipes-management" target="blank">https://github.com/Tornadosky/recipes-management</a>
@@ -615,34 +651,42 @@
                   <p class="lead">For this project I had to work intensively to create a working BNF grammar and a well-structured class-based parsing program.</p>
                   <p class="lead">By providing txt file with some structure, program parses this text to symbolic expressions. After the parsing the heavy-lifting part of actually solving the system is given to Z3 solver.</p>
                   <p class="lead">Here are some example of input-output of the program:</p>
-                  <p class="lead">Where no solutions are found:</p>
-                  <pre style="text-align:left"><code>
+                  <h5>Where no solutions are found:</h5>
+                  <p></p>
+                  <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                    <pre style="text-align:left"><code>
 Solve
 x + y + z = 10,
 x - z = 5
 such that
 x > 5 or (x < -5 and y < 0),
-z < 0.
-                  </code></pre>
+z < 0.</code>
+                    </pre>
+                  </div>
+                  <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
                   <pre style="text-align:left"><code>
 >>> sol = solve(”sys.txt”)
-No solution!
-                  </code></pre>
+No solution!</code></pre>
+                  </div>
 
-                  <p class="lead">Where at least one solution is found:</p>
+                  <p></p>
+                  <h5>Where at least one solution is found:</h5>
+                  <p></p>
+                  <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
                   <pre style="text-align:left"><code>
 Solve
 x + y + z = 10,
 x - z = 5
 such that
 x > 5 or x < -5 and y > 0,
-z < 0.
-                  </code></pre>
+z < 0.</code></pre>
+                  </div>
+                  <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
                   <pre style="text-align:left"><code>
 >>> sol = solve(”sys.txt”)
 >>> sol
-{’x’: -6, ’y’: 27, ’z’: -11}
-                  </code></pre>
+{’x’: -6, ’y’: 27, ’z’: -11}</code></pre>
+                  </div>
 
                   <div class="lead mb-4">
                     <b>View this project on GitHub: </b>
@@ -819,32 +863,6 @@ z < 0.
                   <p class="lead">Here is the gif of image quality based on rank-k approximation:</p>
                   <img class="img-fluid d-block mx-auto" src="/img/svd-image-reconstruction.gif" alt="SVD-image">
                   <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
-                    <i class="fa fa-times"></i> Close Project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-10 mx-auto">
-                <div class="modal-body">
-                  <h2>Seam Carver</h2>
-                  <p class="lead">This application provides content-aware image resizing.</p>
-                  <img class="img-fluid d-block mx-auto" src="/img/seam.png" alt="Seam">
-                  <p class="lead">This application uses a technique called seam-carving, which enables you to resize an image without noticeably affecting its content.</p>
-                  <p class="lead">Seam-carving works differently from stretching, shrinking, or cropping an image, as it removes or adds pixels in the least noticeable areas to reduce or enlarge the image size without obvious modifications. This application, which provides a UI for my implementation of the seam-carving algorithm, demonstrates an example of reducing image size using content-aware resizing, as shown by the red pixels representing the removed portions.</p>                  <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                     <i class="fa fa-times"></i> Close Project</a>
                 </div>
               </div>
