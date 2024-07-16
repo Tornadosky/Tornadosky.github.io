@@ -298,6 +298,17 @@
             </a>
           </div>
           <div class="col-lg-4">
+            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal11">
+              <span class="caption">
+                <span class="caption-content">
+                  <h4>Semantic Search with Transformers</h4>
+                  <p class="mb-0">Find relevant research papers based on SciBERT embeddings</p>
+                </span>
+              </span>
+              <img class="img-fluid portfolio-img" src="/img/embeddings.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-4">
             <a class="portfolio-item" data-toggle="modal" href="#portfolioModal1">
               <span class="caption">
                 <span class="caption-content">
@@ -935,6 +946,46 @@ z < 0.</code></pre>
         </div>
       </div>
     </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <h2>Semantic Similarity in Scientific Papers Using Transformers</h2>
+                <p class="lead">In this project, we aim to use transformers to analyze the semantic similarity of scientific papers in the DIT publication database. By constructing a latent space for these papers, we can compute the Euclidean distances between their embeddings. This analysis will extend to finding the closest authors based on the semantic similarity of their research papers, potentially fostering new collaborations.</p>
+                <h4>Objectives</h4>
+                <p class="lead">1. Construct Latent Space: Use transformers to create embeddings for each paper abstract in the database.<br>
+                2. Calculate Euclidean Distances: Determine the Euclidean distances between paper embeddings.<br>
+                3. Author Pairing by Similarity: Find the distances between every possible pair of authors and recommend the top 5 closest authors for each author (excluding current co-authors).<br>
+                4. Visualization and Clustering: Map the embeddings onto a 2D plane and apply k-means clustering.<br>
+                5. Keyword Extraction and Wordclouds: Use KeyBERT to extract keywords from each cluster and display them as word clouds.</p>
+                <h4>Steps</h4>
+                <p class="lead">1. Data Preparation: Load and preprocess the JSON file containing paper abstracts and co-authors.<br>
+                2. Constructing Latent Space: Generate embeddings for each abstract using a pre-trained transformer model.<br>
+                3. Calculating Euclidean Distances: Compute the Euclidean distances between all pairs of paper embeddings.<br>
+                4. Author Pairing: Aggregate paper embeddings for each author, compute distances, and identify the top 5 closest authors.<br>
+                5. Visualization and Clustering: Reduce the dimensionality of embeddings, plot them on a 2D plane, and apply k-means clustering.<br>
+                6. Keyword Extraction and Wordclouds: Extract keywords using KeyBERT and create word clouds for each cluster.</p>
+                <h4>Tools and Libraries</h4>
+                <p class="lead">Transformers (Hugging Face), SciPy, Scikit-Learn, KeyBERT, Matplotlib/Seaborn, WordCloud</p>
+                <h4>Expected Outcome</h4>
+                <p class="lead">This project will provide a detailed semantic analysis of scientific papers, facilitating new research collaborations by recommending authors based on the similarity of their work. Additionally, the visualization and keyword extraction will offer valuable insights into the major research themes within the database.</p>
+                <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
+                  <i class="fa fa-times"></i> Close Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top js-scroll-trigger" href="#page-top">
