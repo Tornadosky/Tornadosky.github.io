@@ -287,6 +287,17 @@
         </div>
         <div class="row no-gutters">
           <div class="col-lg-4">
+            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal13">
+              <span class="caption">
+                <span class="caption-content">
+                  <h4>Board Games RAG</h4>
+                  <p class="mb-0">Create a RAG system with Mistral-7b to answer questions for custom data</p>
+                </span>
+              </span>
+              <img class="img-fluid portfolio-img" src="/img/monopoly.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-4">
             <a class="portfolio-item" data-toggle="modal" href="#portfolioModal12">
               <span class="caption">
                 <span class="caption-content">
@@ -1056,6 +1067,61 @@ z < 0.</code></pre>
         </div>
       </div>
     </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <h2>Simple RAG Project Using Board Games Dataset</h2>
+                <p class="lead">This project involves creating a Retrieval-Augmented Generation (RAG) model using board games dataset. We utilized various datasets, including Monopoly, Battleship, Ticket to Ride, Codenames, and Exploding Kittens, to perform semantic analysis and generate responses based on the rules of these games.</p>
+                <h4>Project Overview</h4>
+                <p class="lead">In this project, we used transformers to embed the rules of several board games and performed clustering and keyword extraction to understand the semantic structure of the text. We also integrated a language model for generating responses based on user queries.</p>
+                <h4>Data Import and Formatting</h4>
+                <p class="lead">We imported data from various board games and performed text formatting to clean and prepare the text for analysis.</p>
+                <h4>Embedding the Text</h4>
+                <p class="lead">The cleaned text was split into sentences and then chunked into groups. We used the SentenceTransformer model to generate embeddings for these chunks.</p>
+                <h4>UMAP Visualization</h4>
+                <p class="lead">We used UMAP to reduce the dimensionality of the embeddings and create a 2D visualization of the sentence embeddings.</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/umap_embeddings.png" alt="UMAP Visualization">
+                </div>
+                <h4>Clustering and Keyword Extraction</h4>
+                <p class="lead">K-means clustering was performed on the reduced embeddings, and KeyBERT was used to extract keywords from each cluster. The keywords were visualized using word clouds.</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/wordcloud.png" alt="Wordcloud">
+                </div>
+                <h4>Language Model Integration</h4>
+                <p class="lead">We integrated the Gemma-7b-it language model from Hugging Face and Mistral-7b from GPT4ALL to generate responses based on user queries. The model was tested with various queries to ensure its accuracy and relevance.</p>
+                <h4>Example Model Response</h4>
+                <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                  <pre style="text-align:left"><code>
+Query: How many agent cards are there for each team in Codenames? 
+Model's Answer: There are 8 red agent cards and 8 blue agent cards for each team. 
+Truth: There are 8 red agent cards and 8 blue agent cards.</code>
+                  </pre>
+                </div>
+                <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                  <pre style="text-align:left"><code>
+Query: What does a Defuse Card do when you draw an Exploding Kitten? 
+Model's Answer: A Defuse Card allows you to reinsert an Exploding Kitten back into the Draw Pile in secret, instead of dying. 
+Truth: A Defuse Card prevents you from exploding by allowing you to place the Exploding Kitten back into the draw pile anywhere you'd like. </code></pre>
+                </div>
+                <a class="btn btn-dark btn-l" style="margin-top: 5px;" data-dismiss="modal" href="#">
+                  <i class="fa fa-times"></i> Close Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
 
     <!-- Scroll to Top Button-->
