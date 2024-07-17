@@ -336,6 +336,17 @@
             </a>
           </div>
           <div class="col-lg-4">
+            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal15">
+              <span class="caption">
+                <span class="caption-content">
+                  <h4>Vision Transformer from scratch</h4>
+                  <p class="mb-0">Classify MNIST images with Vision Transformer</p>
+                </span>
+              </span>
+              <img class="img-fluid portfolio-img" src="/img/vit.png" alt="Vision Transformer">
+            </a>
+          </div>
+          <div class="col-lg-4">
             <a class="portfolio-item" data-toggle="modal" href="#portfolioModal11">
               <span class="caption">
                 <span class="caption-content">
@@ -366,6 +377,17 @@
                 </span>
               </span>
               <img class="img-fluid portfolio-img" src="/img/sound.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal14">
+              <span class="caption">
+                <span class="caption-content">
+                  <h4>Easy Knowledge</h4>
+                  <p class="mb-0">Book reading app with Automatic Tests Creation</p>
+                </span>
+              </span>
+              <img class="img-fluid portfolio-img" src="/img/easy_knowledge.png" alt="">
             </a>
           </div>
           <div class="col-lg-4">
@@ -1140,7 +1162,92 @@ Truth: A Defuse Card prevents you from exploding by allowing you to place the Ex
         </div>
       </div>
     </div>
-    
+
+    <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <h2>Web App for Book Reading and Automatic Test Creation</h2>
+                <p class="lead">This web application is designed to enhance student learning by providing a platform for reading books and automatically generating tests based on the material. The app ensures students are well-prepared and engaged with their learning materials.</p>
+                <h4>Project Overview</h4>
+                <p class="lead">The application leverages modern web technologies and frameworks including React, Node.js, GraphQL, PostgreSQL, PDF.js, websockets, Tailwind CSS, Vite, TypeScript, OpenAI API, and LangChain. It features a seamless reading experience and automatic test generation to facilitate effective study and revision.</p>
+                <h4>Technologies Used</h4>
+                <p class="lead">
+                  - <strong>Frontend:</strong> React, TypeScript, Tailwind CSS, Vite<br>
+                  - <strong>Backend:</strong> Node.js, GraphQL, PostgreSQL, Websockets<br>
+                  - <strong>Other Libraries:</strong> PDF.js for displaying book content, OpenAI API for generating test questions, LangChain for natural language processing tasks
+                </p>
+                <h4>Main Screen</h4>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/readex-main.png" alt="Main Screen">
+                </div>
+                <h4>Test Screen</h4>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/readex-tests.png" alt="Test Screen">
+                </div>
+                <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
+                  <i class="fa fa-times"></i> Close Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <h2>Vision Transformers</h2>
+                <p class="lead">This project focuses on using Vision Transformers (ViT) to classify images from the MNIST dataset. The model splits the images into patches, processes them through transformer layers, and then classifies them into the corresponding digits.</p>
+                <h4>Project Overview</h4>
+                <p class="lead">The MNIST dataset consists of 60,000 training images and 10,000 test images of handwritten digits. Each image is 28x28 pixels. We utilized Vision Transformers, a state-of-the-art method in image classification, to achieve high accuracy on this dataset.</p>
+                <h4>Data Preparation</h4>
+                <p class="lead">The data was preprocessed by normalizing the pixel values and reshaping the images to add a channel dimension, making them compatible with TensorFlow's requirements.</p>
+                <h4>Patches Creation</h4>
+                <p class="lead">The images were divided into smaller patches which were then fed into the transformer model. This approach allows the model to learn from different parts of the image independently.</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/patches.png" alt="Patches Visualization">
+                </div>
+                <h4>Transformers Integration</h4>
+                <p class="lead">We employed multiple transformer blocks to process the patches. Each block consists of multi-head self-attention and feed-forward neural networks, enabling the model to capture complex patterns in the data.</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/vit.png" alt="Transformers Workflow">
+                </div>
+                <h4>Model Training</h4>
+                <p class="lead">The model was trained using the Adam optimizer and Sparse Categorical Crossentropy loss. We trained the model for 20 epochs with a batch size of 2000. The training process involved a validation split of 10% to monitor the model's performance on unseen data.</p>
+                <h4>Predictions</h4>
+                <p class="lead">After training, the model achieved an accuracy of 98.2% on the test set. The model's predictions on sample test images are shown below:</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/vit_pred.png" alt="Predictions Visualization">
+                </div>
+                <h4>Training Progress</h4>
+                <p class="lead">The training progress was visualized by plotting the accuracy and loss for both training and validation sets over each epoch. This helped in understanding the model's learning curve and identifying any overfitting or underfitting issues.</p>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/vit_progress.png" alt="Training Progress">
+                </div>
+                <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
+                  <i class="fa fa-times"></i> Close Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
     <!-- Scroll to Top Button-->
