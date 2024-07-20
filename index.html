@@ -24,6 +24,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="css/combined.css" rel="stylesheet">
+    <style>
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+      }
+      table, th, td {
+          border: 1px solid black;
+      }
+      th, td {
+          padding: 8px;
+          text-align: left;
+      }
+  </style>
 
   </head>
 
@@ -708,8 +722,8 @@
                   <h2>Cooking Recipes Management System</h2>
                   <p class="lead">Web application to manage cooking recipes, users and user-recipe information.</p>
                   <p class="lead">I created Backend API in Spring Boot (Java) to manage recipes and users, created and maintained MongoDB database and wrote Unit tests with JUnit.</p>
-                  <p class="lead">This project is a university group project. My team was 12 people with 4 Departments: <b>Frontend</b>, <b>Backend</b>, <b>Android</b> and <b>QA/DevOps</b>. Since we have had internal problems in DevOps team, I also helped to containerize the app with Docker and deploy it to Microsoft Azure.</p>
-                  <p class="lead">We worked as an Agile team in a Scrum environment. Besides the Backend part, I was a leader of 4 departments, managing some team tasks in Jira by creating Product backlog, assigning tasks, managing sprints and communicating with Professor, who played the role of a client.</p>
+                  <p class="lead">This project is a university group project. My team was 12 people with 4 Departments: <b>Frontend</b>, <b>Backend</b>, <b>Android</b> and <b>QA/DevOps</b>. Since I have had internal problems in DevOps team, I also helped to containerize the app with Docker and deploy it to Microsoft Azure.</p>
+                  <p class="lead">I worked as an Agile team in a Scrum environment. Besides the Backend part, I was a leader of 4 departments, managing some team tasks in Jira by creating Product backlog, assigning tasks, managing sprints and communicating with Professor, who played the role of a client.</p>
                   <h3>Figma Design</h3>
                   <p></p>
                   <img class="img-fluid d-block mx-auto" src="/img/recipes_design.png" alt="">
@@ -1035,24 +1049,158 @@ z < 0.</code></pre>
             <div class="row">
               <div class="modal-body">
                 <h2>Semantic Similarity in Scientific Papers Using Transformers</h2>
-                <p class="lead">In this project, we aim to use transformers to analyze the semantic similarity of scientific papers in the DIT publication database. By constructing a latent space for these papers, we can compute the Euclidean distances between their embeddings. This analysis will extend to finding the closest authors based on the semantic similarity of their research papers, potentially fostering new collaborations.</p>
+                <p class="lead" style="text-align: left;">In this project, I aim to use transformers to analyze the semantic similarity of scientific papers in the DIT publication database. By constructing a latent space for these papers, I can compute the Euclidean distances between their embeddings. This analysis will extend to finding the closest authors based on the semantic similarity of their research papers, potentially fostering new collaborations.</p>
                 <h4>Objectives</h4>
-                <p class="lead">1. Construct Latent Space: Use transformers to create embeddings for each paper abstract in the database.<br>
+                <p class="lead" style="text-align: left;">
+                1. Construct Latent Space: Use transformers to create embeddings for each paper abstract in the database.<br>
                 2. Calculate Euclidean Distances: Determine the Euclidean distances between paper embeddings.<br>
                 3. Author Pairing by Similarity: Find the distances between every possible pair of authors and recommend the top 5 closest authors for each author (excluding current co-authors).<br>
                 4. Visualization and Clustering: Map the embeddings onto a 2D plane and apply k-means clustering.<br>
                 5. Keyword Extraction and Wordclouds: Use KeyBERT to extract keywords from each cluster and display them as word clouds.</p>
-                <h4>Steps</h4>
-                <p class="lead">1. Data Preparation: Load and preprocess the JSON file containing paper abstracts and co-authors.<br>
-                2. Constructing Latent Space: Generate embeddings for each abstract using a pre-trained transformer model.<br>
-                3. Calculating Euclidean Distances: Compute the Euclidean distances between all pairs of paper embeddings.<br>
-                4. Author Pairing: Aggregate paper embeddings for each author, compute distances, and identify the top 5 closest authors.<br>
-                5. Visualization and Clustering: Reduce the dimensionality of embeddings, plot them on a 2D plane, and apply k-means clustering.<br>
-                6. Keyword Extraction and Wordclouds: Extract keywords using KeyBERT and create word clouds for each cluster.</p>
                 <h4>Tools and Libraries</h4>
-                <p class="lead">Transformers (Hugging Face), SciPy, Scikit-Learn, KeyBERT, Matplotlib/Seaborn, WordCloud</p>
+                <p class="lead" style="text-align: left;">Transformers (Hugging Face), SciPy, Scikit-Learn, KeyBERT, Matplotlib/Seaborn, WordCloud</p>
                 <h4>Expected Outcome</h4>
-                <p class="lead">This project will provide a detailed semantic analysis of scientific papers, facilitating new research collaborations by recommending authors based on the similarity of their work. Additionally, the visualization and keyword extraction will offer valuable insights into the major research themes within the database.</p>
+                <p class="lead" style="text-align: left;">This project will provide a detailed semantic analysis of scientific papers, facilitating new research collaborations by recommending authors based on the similarity of their work. Additionally, the visualization and keyword extraction will offer valuable insights into the major research themes within the database.</p>
+                <h4>JSON structure (examplary info)</h4>
+                <div >
+                    <table>
+                        <tr>
+                            <th>Key</th>
+                            <th>Example Value</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>000212c0-370f-df46-a901-1a8962645f6f</td>
+                        </tr>
+                        <tr>
+                            <td>abstractText</td>
+                            <td>The perception of depth in images and video sequences is based on different depth cues...</td>
+                        </tr>
+                        <tr>
+                            <td>pageRange</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>doi</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>isbn</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>placeOfPublication</td>
+                            <td>San Francisco, CA, USA</td>
+                        </tr>
+                        <tr>
+                            <td>referenceType</td>
+                            <td>
+                                <pre>{
+                    "nameDe": "Beitrag (Sammelband oder Tagungsband)",
+                    "nameEn": "Contribution"
+                }</pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td>title</td>
+                                                <td>Measuring perceived depth in natural images and study of its relation with monocular and binocular depth cues</td>
+                                            </tr>
+                                            <tr>
+                                                <td>year</td>
+                                                <td>2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td>file</td>
+                                                <td>{}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>categories</td>
+                                                <td>
+                                                    <pre>[
+                    {
+                        "id": "575b7096-958a-1f43-b5f4-6d25fa320ef3",
+                        "nameDe": "Angewandte Informatik",
+                        "nameEn": "Computer Science"
+                    }
+                ]</pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>keywords</td>
+                                                <td>
+                                                    <pre>[
+                    {
+                        "id": "b373f7d5-f3f4-2348-9bdc-4004cc6d936e",
+                        "nameDe": "DIGITAL",
+                        "nameEn": "DIGITALISATION"
+                    },
+                    {
+                        "id": "407e12cd-1b58-5847-a1da-d5d72254c27e",
+                        "nameDe": "Academic",
+                        "nameEn": "Academic"
+                    }
+                ]</pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>referenceAuthors</td>
+                                                <td>
+                                                    <pre>[
+                    {
+                        "person": {
+                            "firstname": "P.",
+                            "lastname": "Lebreton",
+                            "notes": null,
+                            "id": "928c8d0c-8a54-f045-bafe-6b686b620ba8"
+                        },
+                        "rank": 0
+                    }
+                ]</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>seriesTitle</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>periodical</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>titleIn</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>publisher</td>
+                            <td>[]</td>
+                        </tr>
+                        <tr>
+                            <td>referenceEditors</td>
+                            <td>[]</td>
+                        </tr>
+                        <tr>
+                            <td>institute</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>organisation</td>
+                            <td>null</td>
+                        </tr>
+                    </table>
+                </div>
+                <h4>Latent Space in 2D</h4>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/paper_embeddings.png" alt="paper embeddings">
+                </div>
+                <h4>Some Clusters for the Latent Space</h4>
+                <div style="text-align: center;">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/cluster1_papers.png" alt="cluster 1">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/cluster2_papers.png" alt="cluster 2">
+                  <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/cluster3_papers.png" alt="cluster 3">
+                </div>
                 <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                   <i class="fa fa-times"></i> Close Project</a>
               </div>
@@ -1137,15 +1285,15 @@ z < 0.</code></pre>
             <div class="row">
               <div class="modal-body">
                 <h2>Simple RAG Project Using Board Games Dataset</h2>
-                <p class="lead">This project involves creating a Retrieval-Augmented Generation (RAG) model using board games dataset. We utilized various datasets, including Monopoly, Battleship, Ticket to Ride, Codenames, and Exploding Kittens, to perform semantic analysis and generate responses based on the rules of these games.</p>
+                <p class="lead">This project involves creating a Retrieval-Augmented Generation (RAG) model using board games dataset. I utilized various datasets, including Monopoly, Battleship, Ticket to Ride, Codenames, and Exploding Kittens, to perform semantic analysis and generate responses based on the rules of these games.</p>
                 <h4>Project Overview</h4>
-                <p class="lead">In this project, we used transformers to embed the rules of several board games and performed clustering and keyword extraction to understand the semantic structure of the text. We also integrated a language model for generating responses based on user queries.</p>
+                <p class="lead">In this project, I used transformers to embed the rules of several board games and performed clustering and keyword extraction to understand the semantic structure of the text. I also integrated a language model for generating responses based on user queries.</p>
                 <h4>Data Import and Formatting</h4>
-                <p class="lead">We imported data from various board games and performed text formatting to clean and prepare the text for analysis.</p>
+                <p class="lead">I imported data from various board games and performed text formatting to clean and prepare the text for analysis.</p>
                 <h4>Embedding the Text</h4>
-                <p class="lead">The cleaned text was split into sentences and then chunked into groups. We used the SentenceTransformer model to generate embeddings for these chunks.</p>
+                <p class="lead">The cleaned text was split into sentences and then chunked into groups. I used the SentenceTransformer model to generate embeddings for these chunks.</p>
                 <h4>UMAP Visualization</h4>
-                <p class="lead">We used UMAP to reduce the dimensionality of the embeddings and create a 2D visualization of the sentence embeddings.</p>
+                <p class="lead">I used UMAP to reduce the dimensionality of the embeddings and create a 2D visualization of the sentence embeddings.</p>
                 <div style="text-align: center;">
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/umap_embeddings.png" alt="UMAP Visualization">
                 </div>
@@ -1155,7 +1303,7 @@ z < 0.</code></pre>
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/wordcloud.png" alt="Wordcloud">
                 </div>
                 <h4>Language Model Integration</h4>
-                <p class="lead">We integrated the Gemma-7b-it language model from Hugging Face and Mistral-7b from GPT4ALL to generate responses based on user queries. The model was tested with various queries to ensure its accuracy and relevance.</p>
+                <p class="lead">I integrated the Gemma-7b-it language model from Hugging Face and Mistral-7b from GPT4ALL to generate responses based on user queries. The model was tested with various queries to ensure its accuracy and relevance.</p>
                 <h4>Example Model Response</h4>
                 <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
                   <pre style="text-align:left"><code>
@@ -1228,10 +1376,10 @@ Truth: A Defuse Card prevents you from exploding by allowing you to place the Ex
           <div class="container">
             <div class="row">
               <div class="modal-body">
-                <h2>Vision Transformers</h2>
+                <h2>Vision Transformers from scratch</h2>
                 <p class="lead">This project focuses on using Vision Transformers (ViT) to classify images from the MNIST dataset. The model splits the images into patches, processes them through transformer layers, and then classifies them into the corresponding digits.</p>
                 <h4>Project Overview</h4>
-                <p class="lead">The MNIST dataset consists of 60,000 training images and 10,000 test images of handwritten digits. Each image is 28x28 pixels. We utilized Vision Transformers, a state-of-the-art method in image classification, to achieve high accuracy on this dataset.</p>
+                <p class="lead">The MNIST dataset consists of 60,000 training images and 10,000 test images of handwritten digits. Each image is 28x28 pixels. I utilized Vision Transformers, a state-of-the-art method in image classification, to achieve high accuracy on this dataset.</p>
                 <h4>Data Preparation</h4>
                 <p class="lead">The data was preprocessed by normalizing the pixel values and reshaping the images to add a channel dimension, making them compatible with TensorFlow's requirements.</p>
                 <h4>Patches Creation</h4>
@@ -1240,12 +1388,12 @@ Truth: A Defuse Card prevents you from exploding by allowing you to place the Ex
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/patches.png" alt="Patches Visualization">
                 </div>
                 <h4>Transformers Integration</h4>
-                <p class="lead">We employed multiple transformer blocks to process the patches. Each block consists of multi-head self-attention and feed-forward neural networks, enabling the model to capture complex patterns in the data.</p>
+                <p class="lead">I employed multiple transformer blocks to process the patches. Each block consists of multi-head self-attention and feed-forward neural networks, enabling the model to capture complex patterns in the data.</p>
                 <div style="text-align: center;">
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/vit.png" alt="Transformers Workflow">
                 </div>
                 <h4>Model Training</h4>
-                <p class="lead">The model was trained using the Adam optimizer and Sparse Categorical Crossentropy loss. We trained the model for 20 epochs with a batch size of 2000. The training process involved a validation split of 10% to monitor the model's performance on unseen data.</p>
+                <p class="lead">The model was trained using the Adam optimizer and Sparse Categorical Crossentropy loss. I trained the model for 20 epochs with a batch size of 2000. The training process involved a validation split of 10% to monitor the model's performance on unseen data.</p>
                 <h4>Predictions</h4>
                 <p class="lead">After training, the model achieved an accuracy of 98.2% on the test set. The model's predictions on sample test images are shown below:</p>
                 <div style="text-align: center;">
