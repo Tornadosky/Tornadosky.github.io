@@ -1223,47 +1223,42 @@ z < 0.</code></pre>
               <div class="modal-body">
                 <h2>B-Plus Co-op Project for Labels Error Detection</h2>
                 <p class="lead">This project is a collaboration with B-Plus company, utilizing their data along with BDD100k, KITTI, and CARLA simulated datasets. The goal is to detect label errors in autonomous driving scenarios using deep learning models.</p>
-                <h4>Getting Started</h4>
-                <p class="lead">To use the error creation script, refer to the detailed information provided on the project wiki.</p>
                 <h4>Method 2 for Training Model with EPL and EFL</h4>
                 <p class="lead">In the method-2.ipynb notebook, you'll find the code to train a model that takes an image and its labels, and predicts whether each label is erroneous. This is a preliminary setup for testing purposes, and training takes approximately 1.5 hours per epoch on a GPU. The model's input is an image and one of its labels, and the output is a binary indicator (1 for error, 0 for no error).</p>
                 <h4>Project Roadmap</h4>
                 <div style="text-align: center;">
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/roadmap_bplus.png" alt="roadmap_bplus">
                 </div>
-                <h5>April 1 - April 16: Literature Review and Team Organization</h5>
-                <p class="lead">Tasks:<br>
-                  - Select datasets for autonomous driving scenarios and perform exploratory data analysis (EDA).<br>
-                  - Review 4 state-of-the-art research papers on similar methods.<br>
-                  - Review CleanLab and CARLA software.<br>
-                  - Finalize team roles and responsibilities.</p>
-                <p class="lead">Milestone:<br>
-                  - Complete literature review and team setup.<br>
-                  - Initial EDA is done.<br>
-                  - Set vector for future work.</p>
-                <h5>April 16 - April 30: Error Introduction and DNN Training</h5>
-                <p class="lead">Tasks:<br>
-                  - Implement Paper #2 (focus on Loss implementation).<br>
-                  - Implement two Deep Neural Network (DNN) methods.<br>
-                  - Continue exploration and integration of CleanLab and CARLA.<br>
-                  - Prepare scripts to introduce controlled errors into dataset labels.</p>
-                <p class="lead">Milestone:<br>
-                  - Datasets are ready with and without introduced errors.<br>
-                  - Initial methods are tested.</p>
-                <h5>April 30 - May 14: Model Testing and Method Comparison</h5>
-                <p class="lead">Tasks:<br>
-                  - Continue refining Convolutional Neural Network (CNN) models.<br>
-                  - Test and evaluate different approaches for detecting label errors.<br>
-                  - Integrate CARLA for simulation and testing.</p>
-                <p class="lead">Milestone:<br>
-                  - Finalized models and comprehensive comparison of methods completed.</p>
-                <h5>May 14 - May 28: Final Review and Documentation</h5>
-                <p class="lead">Tasks:<br>
-                  - Final adjustments based on feedback and test results.<br>
-                  - Document the project, methodologies used, results, and learnings.<br>
-                  - Prepare final presentation.</p>
-                <p class="lead">Milestone:<br>
-                  - Project documentation and final presentation are ready.</p>
+                <h4>CARLA Simulator</h4>
+                <p class="lead"><a href="https://carla.org//">CARLA</a> is an open-source simulator for autonomous driving research. It provides a platform for testing and training autonomous driving systems in a controlled, realistic environment.</p>
+                <div class="row image-row">
+                  <div class="col-md-4">
+                    <img src="/img/carla1.png" alt="CARLA Simulator Image 1" class="img-fluid">
+                  </div>
+                  <div class="col-md-4">
+                    <img src="/img/carla2.png" alt="CARLA Simulator Image 2" class="img-fluid">
+                  </div>
+                  <div class="col-md-4">
+                    <img src="/img/carla3.png" alt="CARLA Simulator Image 3" class="img-fluid">
+                  </div>
+                  <div class="col-md-12">
+                    <img src="/img/carla_vid.gif" style="width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" alt="CARLA Simulator Video" class="img-fluid">
+                  </div>
+                </div>
+                <h4>Error Introduction</h4>
+                <div class="image-row">
+                    <img src="/img/error_intro1.png" alt="Error Introduction Image 1" class="img-fluid">
+                    <img src="/img/error_intro2.png" alt="Error Introduction Image 2" class="img-fluid">
+                </div>
+                <h4>Training Prediction Model</h4>
+                <div style="text-align: center;">
+                    <img class="img-fluid mx-auto d-block" src="/img/learning_curve.png" alt="Learning Curve">
+                </div>
+                <h4>Results on KITTI Dataset with Model Predictions</h4>
+                <div class="image-row">
+                    <img src="/img/nn_results.png" alt="NN Results on KITTI Dataset" class="img-fluid">
+                    <img src="/img/iou_results.png" alt="IoU Results on KITTI Dataset" class="img-fluid">
+                </div>
                 <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                   <i class="fa fa-times"></i> Close Project</a>
               </div>
