@@ -215,7 +215,7 @@
               I've also created several programs using libraries such as OpenCV, Tensorflow, Pytorch – these include my <a data-toggle="modal" href="#portfolioModal1">NVIDIA Jetbot with gestures recognition system</a>,
                <a data-toggle="modal" href="#portfolioModal6">telegram bot for snakes classification</a>,
                 <a data-toggle="modal" href="#portfolioModal12">B-Plus Co-op project</a>. 
-                Besides that, I have implemented Vision Transformer for classfying MNIST images from scratch and implemented different kind of GANs (traditional, DCGANs) from scratch to generate celebrity and mnist images</p>
+                Besides that, I have implemented <a data-toggle="modal" href="#portfolioModal15">Vision Transformer</a> for classifying MNIST images from scratch and implemented different kinds of GANs (traditional, DCGANs) from scratch to generate celebrity and MNIST images.</p>
           </div>
           <div class="col-lg-4 col-md-6 mb-5">
             <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
@@ -224,11 +224,11 @@
             <h4>
               <b>Machine Learning</b>
             </h4>
-              <p class="text-faded mb-0">I've worked on many projects involving machine learning.
-                Relevant personal projects include my <a data-toggle="modal" href="#portfolioModal5">auction car prices prediction</a>,
-                <a data-toggle="modal" href="#portfolioModal2">university speech assistant</a>,
-                <a data-toggle="modal" href="#portfolioModal13">RAG for board games</a> and 
-                <a data-toggle="modal" href="#portfolioModal11">semantic search for THD research papers</a>. I have experience using Tensorflow, PyTorch, and Keras.</p>
+            <p class="text-faded mb-0">I've worked on many projects involving machine learning.
+              Relevant personal projects include my <a data-toggle="modal" href="#portfolioModal5">auction car prices prediction</a>,
+              <a data-toggle="modal" href="#portfolioModal2">university speech assistant</a>,
+              <a data-toggle="modal" href="#portfolioModal13">RAG for board games</a> and 
+              <a data-toggle="modal" href="#portfolioModal11">semantic search for THD research papers</a>. I have experience using Tensorflow, PyTorch, and Keras.</p>
           </div>
           <div class="col-lg-4 col-md-6 mb-5">
             <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
@@ -237,14 +237,14 @@
             <h4>
               <b>NLP</b>
             </h4>
-            <p class="text-faded mb-0">Over the last year, I've had created a lot of Natural Language Processing projects, which include 
+            <p class="text-faded mb-0">Over the last year, I've created a lot of Natural Language Processing projects, which include 
               <a data-toggle="modal" href="#portfolioModal2">university speech assistant</a>
                where I implemented an intelligent speech assistant by translating text to speech and analyzing human voice to obtain reasonable intents.
                Some projects, like 
                <a data-toggle="modal" href="#portfolioModal13">RAG for board games</a> and 
                <a data-toggle="modal" href="#portfolioModal11">semantic search for THD research papers</a>
                were created using transformers.
-                I have also utilized NLTK in smaller projects for analysing corpora, creating N-gram predictive models and Naive Bayes documents classifiers.</p>
+                I have also utilized NLTK in smaller projects for analyzing corpora, creating N-gram predictive models and Naive Bayes documents classifiers.</p>
           </div>
           <div class="col-lg-4 col-md-6 mb-5">
             <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
@@ -284,7 +284,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3 text-secondary">
-<!--              <i class="fa fa-laptop fa-2x" style="padding-top:18px"></i>-->
+    <!--        <i class="fa fa-laptop fa-2x" style="padding-top:18px"></i>-->
               <img id="atom" src="/img/atom.png" class="img-responsive img-circle" style="border:8px solid white" alt="">
             </span>
             <h4>
@@ -299,11 +299,12 @@
             <h4>
               <b>MongoDB, MySQL, PostgreSQL</b>
             </h4>
-              <p class="text-faded mb-0">With some experience using MongoDB, MySQL and PostgreSQL for backends, some of my projects utilize Spring Boot's MongoDB driver. Working over <a data-toggle="modal" href="#portfolioModal3">cooking recipes management system</a>, I was responsible for using MongoDB database efficiently and creating services that allowed for easy interaction between web app and database.</p>
+            <p class="text-faded mb-0">With some experience using MongoDB, MySQL and PostgreSQL for backends, some of my projects utilize Spring Boot's MongoDB driver. Working over <a data-toggle="modal" href="#portfolioModal3">cooking recipes management system</a>, I was responsible for using MongoDB database efficiently and creating services that allowed for easy interaction between web app and database.</p>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Portfolio -->
     <section class="content-section" id="projects">
@@ -1280,15 +1281,11 @@ z < 0.</code></pre>
             <div class="row">
               <div class="modal-body">
                 <h2>Simple RAG Project Using Board Games Dataset</h2>
-                <p class="lead">This project involves creating a Retrieval-Augmented Generation (RAG) model using board games dataset. I utilized various datasets, including Monopoly, Battleship, Ticket to Ride, Codenames, and Exploding Kittens, to perform semantic analysis and generate responses based on the rules of these games.</p>
+                <p class="lead">This project involves creating a Retrieval-Augmented Generation (RAG) model using board games dataset. I utilized various datasets, including <b>Monopoly</b>, <b>Battleship</b>, <b>Ticket to Ride</b>, <b>Codenames</b>, and <b>Exploding Kittens</b>, to perform semantic analysis and generate responses based on the rules of these games.</p>
                 <h4>Project Overview</h4>
                 <p class="lead">In this project, I used transformers to embed the rules of several board games and performed clustering and keyword extraction to understand the semantic structure of the text. I also integrated a language model for generating responses based on user queries.</p>
-                <h4>Data Import and Formatting</h4>
-                <p class="lead">I imported data from various board games and performed text formatting to clean and prepare the text for analysis.</p>
-                <h4>Embedding the Text</h4>
-                <p class="lead">The cleaned text was split into sentences and then chunked into groups. I used the SentenceTransformer model to generate embeddings for these chunks.</p>
                 <h4>UMAP Visualization</h4>
-                <p class="lead">I used UMAP to reduce the dimensionality of the embeddings and create a 2D visualization of the sentence embeddings.</p>
+                <p class="lead">The cleaned text was split into sentences and then chunked into groups. I used the SentenceTransformer model to generate embeddings for these chunks and UMAP to reduce the dimensionality of the embeddings and create a 2D visualization of the sentence embeddings.</p>
                 <div style="text-align: center;">
                   <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/umap_embeddings.png" alt="UMAP Visualization">
                 </div>
