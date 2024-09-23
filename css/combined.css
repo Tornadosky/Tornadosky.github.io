@@ -179,12 +179,12 @@ img::-moz-selection {
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 0.75em !important;
   }
-  #mainNav.navbar-shrink {
+  #mainNav.navbar {
     padding-top: 0;
     padding-bottom: 0;
     background-color: #212529;
   }
-  #mainNav.navbar-shrink .navbar-brand {
+  #mainNav.navbar .navbar-brand {
     font-size: 1.25em;
     padding: 12px 0;
   }
