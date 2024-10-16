@@ -395,6 +395,17 @@
             </a>
           </div>
           <div class="col-lg-4">
+            <a class="portfolio-item" data-toggle="modal" href="#portfolioModal16">
+              <span class="caption">
+                <span class="caption-content">
+                  <h4>Blackjack with RL</h4>
+                  <p class="mb-0">Solving Blackjack with Q-Learning</p>
+                </span>
+              </span>
+              <img class="img-fluid portfolio-img" src="/img/blackjack.png" alt="Vision Transformer">
+            </a>
+          </div>
+          <div class="col-lg-4">
             <a class="portfolio-item" data-toggle="modal" href="#portfolioModal11">
               <span class="caption">
                 <span class="caption-content">
@@ -1440,6 +1451,50 @@ Truth: A Defuse Card prevents you from exploding by allowing you to place the Ex
         </div>
       </div>
     </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 mx-auto">
+                <div class="modal-body">
+                  <h2>Solving Blackjack with Reinforcement Learning</h2>
+                  <p class="lead">This project focuses on applying reinforcement learning algorithms to solve the game of Blackjack. The objective is to train an agent that can play Blackjack optimally by learning from its interactions with the game environment.</p>
+                  
+                  <h4>Project Overview</h4>
+                  <p class="lead">Blackjack is a popular card game where the goal is to beat the dealer by having a hand value closest to 21 without exceeding it. This project utilizes Q-learning to train an agent to make optimal decisions.</p>
+                  
+                  <h4>Game Environment</h4>
+                  <p class="lead">The game environment was implemented using OpenAI's Gym framework. The agent interacts with the environment by taking actions such as "hit" or "stand," and receives rewards based on the outcome of each game.</p>
+                  <div style="text-align: center;">
+                    <img class="img-fluid mx-auto d-block" style="max-width: 100%; border: 6px solid #ccc; margin-bottom: 20px;" src="/img/blackjack1.gif" alt="Blackjack Environment">
+                  </div>
+                  
+                  <h4>Q-Learning Implementation</h4>
+                  <p class="lead">Q-learning is a model-free reinforcement learning algorithm. The agent learns a Q-table that stores the expected rewards for state-action pairs. The agent updates the Q-values based on the rewards received after taking actions.</p>
+                  
+                  <div class="lead mb-4">
+                    <b>View this project on GitHub: </b>
+                    <a href="https://github.com/Tornadosky/blackjack-rl" target="blank">https://github.com/Tornadosky/blackjack-rl</a>
+                    <iframe class="mt-2" src="http://lab.lepture.com/github-cards/card.html?user=Tornadosky&repo=blackjack-rl" frameborder="0" scrolling="0" width="400" style="max-width: 70vw" height="180" allowtransparency="true"></iframe><br>
+                  </div>
+                  
+                  <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
+                    <i class="fa fa-times"></i> Close Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
 
     <!-- Scroll to Top Button-->
