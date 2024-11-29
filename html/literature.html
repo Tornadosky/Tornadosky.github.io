@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ivan Smirnov">
+    <title>Literature - Ivan Smirnov</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        .mosaic-container {
+            display: flex;
+            flex-direction: row;
+            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+            grid-auto-flow: dense; /* Fills gaps automatically */
+            gap: 10px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .mosaic-item {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .mosaic-pdf {
+            display: flex;
+            height: 80%;
+            width: 600px;
+        }
+
+        .mosaic-pdf .img {
+            display: flex;
+            object-fit: cover;
+        }
+
+        .mosaic-choices {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        .upper-mosaic {
+            display: flex;
+            flex-direction: row;
+            /* gap: 10px; */
+            height: 100%;
+            width: 100%;
+        }
+
+        .bottom-mosaic {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            height: 100%;
+            width: 50%;
+        }
+
+        .mosaic-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* Ensures the image fills its container neatly */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mosaic-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .mosaic-item .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .mosaic-item:hover .description {
+            display: block;
+        }
+
+        .mosaic-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* PDF button overlay in the top-left corner */
+        .mosaic-item .pdf-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            display: none;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .mosaic-item:hover .pdf-overlay {
+            display: block;
+        }
+
+        /* Specific style for the vertical ML report item */
+        .mosaic-item.ml-report {
+            grid-row: span 2; /* Ensures it spans 2 rows */
+        }
+
+        .mosaic-item.ml-report img {
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Literature</h1>
+    <div class="mosaic-container">
+        <div class="mosaic-choices">
+            <div class="upper-mosaic">
+                <div class="mosaic-item">
+                <a href="../img/bplus_onepager.png" target="_blank">
+                    <img src="../img/bplus_onepager.png" alt="B-Plus Project">
+                    <a class="pdf-overlay" href="../html/bplus.html" target="_blank">View HTML</a>
+                    <div class="description">B-Plus: Labels Error Detection for Autonomous Driving</div>
+                </a>
+                </div>
+                <div class="mosaic-item">
+                    <a href="../img/ppo_mamba_onepager.png" target="_blank">
+                        <img src="../img/ppo_mamba_onepager.png" alt="Poster for Bachelor Thesis">
+                        <div class="description">Poster for Bachelor Thesis</div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-mosaic">
+                <div class="mosaic-item">
+                    <a href="../img/ai_for_robotics.png" target="_blank">
+                        <img src="../img/ai_for_robotics.png" alt="Robotics">
+                        <a class="pdf-overlay" href="../doc/ai_for_robotics.pdf" target="_blank">View PDF</a>
+                        <div class="description">Autonomous Robotics Presentation</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mosaic-pdf">
+            <div class="mosaic-item ml-report">
+                <a href="../doc/ML_report.pdf" target="_blank">
+                    <img src="../img/ML_report.png" alt="ML Report Cover">
+                    <a class="pdf-overlay" href="../doc/ML_report.pdf" target="_blank">View PDF</a>
+                    <div class="description">ML Report: Comprehensive 16-Page Analysis</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
