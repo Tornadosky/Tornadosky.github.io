@@ -71,7 +71,7 @@
         .bottom-mosaic {
             display: flex;
             flex-direction: row;
-            gap: 10px;
+            /* gap: 10px; */
             height: 100%;
             width: 50%;
         }
@@ -134,9 +134,25 @@
             grid-row: span 2; /* Ensures it spans 2 rows */
         }
 
-        .mosaic-item.ml-report img {
-            height: 100%;
+        .mosaic-item.igcv-report {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mosaic-item.igcv-report img {
+            height: 110%;
             object-fit: cover;
+        }
+
+        .mosaic-item.ml-report img {
+            height: 110%;
+            object-fit: cover;
+        }
+
+        .bottom-container {
+            display: flex;
+            max-height: 600px;
         }
     </style>
 </head>
@@ -147,11 +163,11 @@
         <div class="mosaic-choices">
             <div class="upper-mosaic">
                 <div class="mosaic-item">
-                <a href="../img/bplus_onepager.png" target="_blank">
-                    <img src="../img/bplus_onepager.png" alt="B-Plus Project">
-                    <a class="pdf-overlay" href="../html/bplus.html" target="_blank">View HTML</a>
-                    <div class="description">B-Plus: Labels Error Detection for Autonomous Driving</div>
-                </a>
+                    <a href="../img/bplus_onepager.png" target="_blank">
+                        <img src="../img/bplus_onepager.png" alt="B-Plus Project">
+                        <a class="pdf-overlay" href="../html/bplus.html" target="_blank">View HTML</a>
+                        <div class="description">B-Plus: Labels Error Detection for Autonomous Driving</div>
+                    </a>
                 </div>
                 <div class="mosaic-item">
                     <a href="../img/ppo_mamba_onepager.png" target="_blank">
@@ -160,12 +176,21 @@
                     </a>
                 </div>
             </div>
-            <div class="bottom-mosaic">
-                <div class="mosaic-item">
-                    <a href="../img/ai_for_robotics.png" target="_blank">
-                        <img src="../img/ai_for_robotics.png" alt="Robotics">
-                        <a class="pdf-overlay" href="../doc/ai_for_robotics.pdf" target="_blank">View PDF</a>
-                        <div class="description">Autonomous Robotics Presentation</div>
+            <div class="bottom-container">
+                <div class="bottom-mosaic">
+                    <div class="mosaic-item">
+                        <a href="../img/ai_for_robotics.png" target="_blank">
+                            <img src="../img/ai_for_robotics.png" alt="Robotics">
+                            <a class="pdf-overlay" href="../doc/ai_for_robotics.pdf" target="_blank">View PDF</a>
+                            <div class="description">Autonomous Robotics Presentation</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="mosaic-item igcv-report">
+                    <a href="../doc/Fraunhofer_Report.pdf" target="_blank">
+                        <img src="../img/Fraunhofer_Report.jpg" alt="Fraunhofer Report Cover">
+                        <a class="pdf-overlay" href="../doc/Fraunhofer_Report.pdf" target="_blank">View PDF</a>
+                        <div class="description">Fraunhofer IGCV Internship Report: 11-Page Detailed Job Description</div>
                     </a>
                 </div>
             </div>
