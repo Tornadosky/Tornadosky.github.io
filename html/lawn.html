@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Lawnmower - Sensor Setup and Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 28px;
+            color: #34495e;
+        }
+        h3 {
+            font-size: 22px;
+            color: #16a085;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            font-family: monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #3498db;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Autonomous Lawnmower - Sensor Setup and Integration</h1>
+
+    <h2>4.1 Sensor Selection and Rationale</h2>
+    <p>The obstacle avoidance system for the autonomous lawnmower was designed to operate reliably in outdoor environments characterized by high vibrations, humidity, and exposure to grass clippings. Initial evaluations of sensor technologies included:</p>
+    <ul>
+        <li><b>Ultrasonic Sensors:</b> The widely used HCS4 ultrasonic sensor was deemed unsuitable due to its susceptibility to environmental factors such as grass clippings entering the transducers and rendering them inoperative.</li>
+        <li><b>LiDAR Sensors:</b> Compact laser sensors like the TF Mini LiDAR, though precise, offered a limited field of view, making them impractical for comprehensive coverage.</li>
+    </ul>
+    <p>As an alternative, <b>automotive parking sensors</b> were selected for their robustness, affordability, and compatibility with custom interfacing solutions. A commercially available eight-sensor parking module was used, capable of detecting obstacles with centimeter-level precision. This decision leveraged the module's built-in signal processing and real-world reliability in adverse conditions.</p>
+
+    <h2>4.2 Parking Sensor Module Integration</h2>
+    <h3>4.2.1 Hardware Setup</h3>
+    <p>The eight-sensor module included:</p>
+    <ul>
+        <li><b>Ultrasonic Sensors:</b> Mounted at the front and rear of the lawnmower, replicating typical car installations.</li>
+        <li><b>Control Unit:</b> Responsible for generating and processing sensor signals.</li>
+        <li><b>Output Display Module:</b> Used for debugging during initial setup.</li>
+    </ul>
+    <p>Sensors were mounted in 3D-printed enclosures attached to the lawnmower's front bumper. These housings were designed to shield sensors from environmental hazards while maintaining optimal field of view.</p>
+
+    <h3>4.2.2 Signal Decoding</h3>
+    <p>Data from the sensor module was accessed via a logic analyzer to understand its communication protocol. Observations included:</p>
+    <ul>
+        <li><b>Packet Structure:</b> Each data packet began with a 1ms starting pulse, followed by a sequence of shorter pulses representing binary data. These binary sequences encoded both the sensor address and the measured distance.</li>
+        <li><b>Timing Characteristics:</b> Packets were transmitted every 35ms, ensuring low latency for real-time obstacle detection.</li>
+    </ul>
+
+    <h3>4.2.3 Microcontroller Interfacing</h3>
+    <p>The parking sensor module was interfaced with an Arduino Due microcontroller:</p>
+    <ul>
+        <li><b>Signal Pin Connection:</b> The signal wire from the sensor control unit was connected to pin 7 on the Arduino.</li>
+        <li><b>Data Processing:</b> A 32-bit unsigned integer was used to store complete data packets, with 8 bits allocated for the sensor address and 8 bits for distance values.</li>
+        <li><b>Pulse Measurement Logic:</b> The Arduino sketch included logic to detect starting pulses and map subsequent pulses to binary data. Decoded values were printed via the serial port for debugging.</li>
+    </ul>
+
+    <h3>4.2.4 Results from Signal Decoding</h3>
+    <p>Initial tests revealed an issue: although the module supported eight sensors, only six were actively transmitting data packets. Investigation showed that the middle two front sensors were inactive, likely due to a limitation in the module's firmware. This anomaly was deemed acceptable, as the application prioritized precision over coverage.</p>
+
+    <h2>4.3 GPS Real-Time Kinematics (RTK) Integration</h2>
+    <h3>4.3.1 RTK Setup</h3>
+    <p>To enable precise navigation, the project employed RTK technology using the ZED-F9P GPS module. The RTK system provided centimeter-level accuracy by correcting positional data using a base station. Key steps included:</p>
+    <ul>
+        <li>Installing RTKLIB: The str2str utility from RTKLIB was installed on a Raspberry Pi. This utility streamed RTCM correction data from an NTRIP caster.</li>
+    </ul>
+    <div class="code-block">
+        <code>
+        cd &lt;install_dir&gt;/rtklib/app/str2str/gcc<br>
+        make<br>
+        make install
+        </code>
+    </div>
+    <ul>
+        <li><b>Configuring Base Station:</b> Using u-center software, the ZED-F9P module was configured in "TIME" mode for base station operation. RTCM messages were then broadcast to RTK2go, a public NTRIP caster.</li>
+    </ul>
+
+    <h3>4.3.2 Automation with Systemd</h3>
+    <p>To ensure seamless operation, systemd services and udev rules were implemented:</p>
+    <div class="code-block">
+        <code>
+        ACTION=="add", SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="1546", TAG+="systemd", ENV{SYSTEMD_WANTS}+="location@%k.service"
+        </code>
+    </div>
+    <p>The systemd service file ensured RTK corrections were reliably streamed to the caster whenever the GPS module was connected.</p>
+
+    <h2>4.4 Camera Integration for Obstacle Context (Optional)</h2>
+    <p>A supplementary camera system was included for visual monitoring. The MJPG-streamer package facilitated real-time video streaming to a local network:</p>
+    <div class="code-block">
+        <code>
+        ./mjpg_streamer -o "output_http.so -w ./www" -i "input_uvc.so -r 640x480 -n"
+        </code>
+    </div>
+    <p>The live stream was accessible at <code>192.168.0.126:3000</code> during testing.</p>
+
+    <h2>4.5 Challenges and Solutions</h2>
+    <h3>4.5.1 Sensor Reliability</h3>
+    <p>Signal inconsistencies were observed during early tests, likely caused by environmental noise. These were mitigated by:</p>
+    <ul>
+        <li>Adding capacitors to stabilize power supply lines.</li>
+        <li>Implementing software-based noise filtering.</li>
+    </ul>
+
+    <h3>4.5.2 GPS Drift</h3>
+    <p>GPS drift under dense foliage and during overcast conditions was addressed by:</p>
+    <ul>
+        <li>Optimizing base station placement for unobstructed sky visibility.</li>
+        <li>Adjusting RTKLIB settings to prioritize accuracy over update rate.</li>
+    </ul>
+
+    <h3>4.5.3 Sensor Coverage</h3>
+    <p>The inability of the middle front sensors to detect obstacles was attributed to module limitations. Alternative placement and reliance on active sensors ensured adequate coverage.</p>
+
+    <p>For further technical details, please consult the project documentation.</p>
+</body>
+
+</html>
