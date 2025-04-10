@@ -3,8 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Wlkata Mirobot and Intel RealSense F200 Integration</title>
-    <meta name="author" content="Your Name">
+    <title>Mirobot 6DOF Mini Robotic Arm - Ivan Smirnov</title>
+    <meta name="author" content="Ivan Smirnov">
     <meta name="viewport" content="width=1100">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="icon" type="image/png" href="../img/logo-rocket.png">
@@ -13,24 +13,33 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
         }
 
-        img {
+        img, video {
             border-radius: 2px;
             margin: 10px 0;
         }
 
-        .image-container {
+        .image-container, .video-container {
             margin: 20px 0;
+            text-align: center;
         }
 
         h1, h2, h3, h4, h5 {
             margin-top: 40px;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
-        p, ul, ol, code {
+        h3 {
+            color: #2470ce;
+        }
+
+        p, ul, ol {
             margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         ul {
@@ -39,7 +48,8 @@
         }
 
         code {
-            background: #f0f0f0;
+            background: #2a2a2a;
+            color: #e0e0e0;
             padding: 3px 5px;
             border-radius: 3px;
         }
@@ -50,24 +60,34 @@
         }
 
         .diagram img {
-            border: 1px solid #ddd;
+            border: 1px solid #444;
             padding: 10px;
-            background: #f9f9f9;
+            background: #1a1a1a;
         }
 
         .highlight {
-            background: #e7f3ff;
+            background: #1e3a5f;
             border-left: 5px solid #2196F3;
             padding: 10px;
             margin: 20px 0;
         }
 
         .code-block {
-            background: #f6f6f6;
-            border: 1px solid #ccc;
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #444;
             padding: 15px;
             margin: 20px 0;
             overflow-x: auto;
+        }
+
+        a {
+            color: #2470ce;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -86,7 +106,7 @@
 
                             <h2>1. Intel RealSense F200 Depth Camera</h2>
                             <p>
-                                The Intel RealSense F200 camera is an early-generation depth sensor originally designed for interactive computing. Although it is no longer officially supported, careful integration using archived drivers and legacy SDKs can still unlock its potential as a low-cost depth source for robotics research. Researchers can leverage the F200’s infrared-based structured light system for near-field depth sensing, enabling the robot to understand its environment’s geometry.
+                                The Intel RealSense F200 camera is an early-generation depth sensor originally designed for interactive computing. Although it is no longer officially supported, careful integration using archived drivers and legacy SDKs can still unlock its potential as a low-cost depth source for robotics research. Researchers can leverage the F200's infrared-based structured light system for near-field depth sensing, enabling the robot to understand its environment's geometry.
                             </p>
 
                             <h3>1.1 Camera Appearance and Specifications</h3>
@@ -99,7 +119,7 @@
 
                             <h3>1.2 Depth and RGB Output</h3>
                             <p>
-                                The camera’s dual output includes:
+                                The camera's dual output includes:
                             </p>
                             <ul>
                                 <li><b>Depth (640x480):</b> Captures a per-pixel distance measurement, enabling 3D perception.</li>
@@ -121,7 +141,7 @@
 
                             <h3>1.3 Setup and Installation</h3>
                             <p>
-                                To use the F200’s depth functionality on a modern Windows environment, follow these steps:
+                                To use the F200's depth functionality on a modern Windows environment, follow these steps:
                             </p>
                             <ul>
                                 <li>Install <b>Depth Camera Manager (DCM)</b> for the F200 (e.g., <code>intel_rs_dcm_f200_1.5.98.25275.exe</code>)</li>
@@ -129,13 +149,13 @@
                                 <li>Connect the camera to a USB 3.0 port on a machine with an Intel 4th generation or newer CPU.</li>
                             </ul>
                             <p>
-                                Once installed, you can verify the depth stream using the legacy RealSense SDK’s sample applications. Although not supported by the modern RealSense SDK 2.0, the F200 can still be integrated into contemporary workflows by using the legacy drivers and bridging solutions.
+                                Once installed, you can verify the depth stream using the legacy RealSense SDK's sample applications. Although not supported by the modern RealSense SDK 2.0, the F200 can still be integrated into contemporary workflows by using the legacy drivers and bridging solutions.
                             </p>
                             <div align="center">
                                 <img src="../img/robot_camera_setup.jpg" width="70%" alt="Camera and Robot Setup Sketch" style="margin:20px;">
                             </div>
                             <p>
-                                The sketch above visualizes a possible angled camera placement. Unlike a top-down setup, an angled camera requires thorough calibration to ensure accurate mapping from image coordinates to the robot’s workspace coordinates.
+                                The sketch above visualizes a possible angled camera placement. Unlike a top-down setup, an angled camera requires thorough calibration to ensure accurate mapping from image coordinates to the robot's workspace coordinates.
                             </p>
 
                             <h2>2. Wlkata Mirobot Robotic Arm</h2>
@@ -169,7 +189,7 @@
                                 Wlkata Studio provides a GUI-based approach to controlling the robot. For advanced operations, we recommend leveraging Python APIs, ROS (Robot Operating System) integration, or custom inverse kinematics solutions. By working at the code level, one can integrate Computer Vision, AI-based planning, and Vision-Language Models (VLMs) that enable commands like:
                             </p>
                             <p class="highlight">
-                                “<i>Robot, please pick the red cube from the left corner of the table and place it next to the blue cube.</i>”
+                                "<i>Robot, please pick the red cube from the left corner of the table and place it next to the blue cube.</i>"
                             </p>
                             <p>
                                 Such a request can be parsed using a large language model, and combined with vision-based object detection and calibration, the robot can interpret and execute the task.
@@ -194,16 +214,16 @@
 
                             <h2>3. Calibration: A Cornerstone of Integration</h2>
                             <p>
-                                Proper calibration ensures that what the camera “sees” can be accurately translated into real-world robot coordinates. Because the camera is placed at an angle, a simple 2D-to-2D homography is insufficient. Instead, we must perform a robust 3D calibration:
+                                Proper calibration ensures that what the camera "sees" can be accurately translated into real-world robot coordinates. Because the camera is placed at an angle, a simple 2D-to-2D homography is insufficient. Instead, we must perform a robust 3D calibration:
                             </p>
                             <ul>
-                                <li><b>Intrinsic Calibration:</b> Using a checkerboard pattern and <code>cv2.calibrateCamera()</code> in OpenCV to determine the camera’s intrinsic parameters (focal length, principal point, distortion coefficients).</li>
-                                <li><b>Extrinsic Calibration (Hand-Eye Calibration):</b> Determining the transformation between the camera frame and the robot’s coordinate frame. This often involves using ArUco markers or checkerboard corners placed at known 3D locations in the robot’s workspace.</li>
+                                <li><b>Intrinsic Calibration:</b> Using a checkerboard pattern and <code>cv2.calibrateCamera()</code> in OpenCV to determine the camera's intrinsic parameters (focal length, principal point, distortion coefficients).</li>
+                                <li><b>Extrinsic Calibration (Hand-Eye Calibration):</b> Determining the transformation between the camera frame and the robot's coordinate frame. This often involves using ArUco markers or checkerboard corners placed at known 3D locations in the robot's workspace.</li>
                             </ul>
 
                             <h3>3.1 Using Checkerboards and ArUco Markers</h3>
                             <p>
-                                Checkerboards are commonly employed for camera calibration due to their high contrast and geometric regularity. By placing a checkerboard at known positions and detecting its corners in the camera image, we gather correspondences between 2D image points and 3D world points. This data feeds into <code>solvePnP()</code> to estimate the camera’s pose.
+                                Checkerboards are commonly employed for camera calibration due to their high contrast and geometric regularity. By placing a checkerboard at known positions and detecting its corners in the camera image, we gather correspondences between 2D image points and 3D world points. This data feeds into <code>solvePnP()</code> to estimate the camera's pose.
                             </p>
                             <p>
                                 Similarly, ArUco markers provide easily detectable fiducials with known geometry. By scattering a few ArUco markers around the workspace and measuring their known positions relative to the robot base, we can robustly compute the camera-to-robot transformation. This process is critical for ensuring that the robot can reach for objects with millimeter-level accuracy.
@@ -279,7 +299,7 @@ pipeline.stop()
                             </div>
 
                             <p>
-                                After obtaining the rotation and translation vectors (<code>rvec</code>, <code>tvec</code>), you can construct a transformation matrix. This matrix allows you to map any detected object’s position from camera coordinates into the robot’s frame, enabling precise pick-and-place operations.
+                                After obtaining the rotation and translation vectors (<code>rvec</code>, <code>tvec</code>), you can construct a transformation matrix. This matrix allows you to map any detected object's position from camera coordinates into the robot's frame, enabling precise pick-and-place operations.
                             </p>
 
                             <h2>4. Vision-Language Model (VLM) Integration</h2>
@@ -287,15 +307,15 @@ pipeline.stop()
                                 With the calibration set and depth stream working, the next challenge is to integrate a Vision-Language Model (VLM). Advanced models—similar to those developed by Google, OpenAI, or NVIDIA—can process both textual and visual inputs, enabling natural language commands like:
                             </p>
                             <p class="highlight">
-                                “Sort all cubes by their color and arrange them in ascending order of red, green, and blue.”
+                                "Sort all cubes by their color and arrange them in ascending order of red, green, and blue."
                             </p>
                             <p>
                                 To implement this:
                             </p>
                             <ul>
-                                <li><b>Pre-trained VLM:</b> Use a model such as OpenAI’s CLIP, BLIP, or a fine-tuned vision-language transformer (e.g., RT-2 by Google) that can parse natural language instructions and identify the relevant objects in the scene.</li>
-                                <li><b>Object Detection:</b> Integrate a YOLO-based or Mask R-CNN-based detector trained on your cube classes, or rely on classical color segmentation if objects are distinctively colored.</li>
-                                <li><b>Planning:</b> After language parsing, the VLM provides a structured query (e.g., “Pick red cubes and move them to coordinate (0.15, 0.05)”). Your code uses the camera-to-robot transform to map detected cube positions to robot coordinates, then issues Mirobot commands to move accordingly.</li>
+                                <li><b>Pre-trained VLM:</b> Use a model such as OpenAI's CLIP, BLIP, or a fine-tuned vision-language transformer (e.g., RT-2 by Google) that can parse natural language instructions and identify the relevant objects in the scene.</li>
+                                <li><b>Object Detection:</b> Integrate a YOLO-based or Mask R-CNN-based detector trained on your cube classes, or rely on classical color segmentation if objects are distinctly colored.</li>
+                                <li><b>Planning:</b> After language parsing, the VLM provides a structured query (e.g., "Pick red cubes and move them to coordinate (0.15, 0.05)"). Your code uses the camera-to-robot transform to map detected cube positions to robot coordinates, then issues Mirobot commands to move accordingly.</li>
                             </ul>
                             <div align="center" class="diagram">
                                 <img src="../img/robot_vlm_diagram.jpg" width="95%" alt="VLM Diagram">

@@ -7,35 +7,150 @@
     <title>Robotics Projects</title>
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="icon" type="image/png" href="../img/robotics.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            font-family: 'Raleway', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            color: #ffffff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 24px;
+            color: #2470ce;
+            font-weight: 600;
+        }
+        
+        h4 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        p, ul, ol {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        a {
+            color: #2470ce;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #3a8be0;
+            text-decoration: underline;
+        }
+
         .code-block {
-            background: #f6f6f6;
-            border: 1px solid #ccc;
+            background: #2a2a2a;
+            border: 1px solid #444;
             padding: 15px;
             margin: 20px 0;
             overflow-x: auto;
             text-align: left;
+            border-radius: 5px;
+            color: #e0e0e0;
         }
 
         img, video {
-            border-radius: 2px;
-            margin: 10px 0;
+            border-radius: 8px;
+            margin: 15px 0;
+            max-width: 100%;
+            border: 1px solid #333;
         }
 
         .code {
             font-family: Consolas,"courier new";
-            color: crimson;
-            background-color: #f1f1f1;
-            padding: 2px;
-            font-size: 105%;
+            color: #e83e8c;
+            background-color: #2a2a2a;
+            padding: 2px 5px;
+            font-size: 90%;
+            border-radius: 3px;
+        }
+        
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        pre {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        /* Override Prism styles to match our dark theme */
+        code[class*="language-"], pre[class*="language-"] {
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .navigation a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2470ce;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        
+        .navigation a:hover {
+            color: #3a8be0;
+        }
+        
+        table {
+            margin: 0 auto;
+            max-width: 1100px;
         }
     </style>
 </head>
 
 <body>
+    <div class="navigation">
+        <a href="../index.html">
+            <span style="margin-right: 8px;">&#8592;</span>Back to Home
+        </a>
+    </div>
+    
     <table width="900" border="0" align="center" cellspacing="0" cellpadding="0">
         <tr>
             <td>
@@ -245,7 +360,7 @@ python c4.py</code></pre>
 
                             <h4>Approach</h4>
                             <p>
-                                We utilized ROS2 nodes to process sensor data and control the robot’s motion. The robot was required to adjust its speed dynamically based on the distance to the obstacle, ensuring smooth acceleration and deceleration.
+                                We utilized ROS2 nodes to process sensor data and control the robot's motion. The robot was required to adjust its speed dynamically based on the distance to the obstacle, ensuring smooth acceleration and deceleration.
                             </p>
 
                             <h5>1. Laser Distance Sensor (LDS) Data Processing</h5>
@@ -279,7 +394,7 @@ python c4.py</code></pre>
 
                             <h5>2. Proportional Velocity Control</h5>
                             <p>
-                                A proportional controller was implemented to adjust the robot’s linear velocity based on the distance to the wall. The velocity was calculated using the formula:
+                                A proportional controller was implemented to adjust the robot's linear velocity based on the distance to the wall. The velocity was calculated using the formula:
                             </p>
                             <br>
                             <p style="text-align: center; font-weight: bold;">

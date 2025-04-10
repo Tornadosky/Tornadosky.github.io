@@ -13,6 +13,8 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
         }
 
         img, video {
@@ -28,10 +30,12 @@
         h1, h2, h3, h4, h5 {
             margin-top: 40px;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
-        p, ul, ol, code {
+        p, ul, ol {
             margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         ul {
@@ -40,7 +44,8 @@
         }
 
         code {
-            background: #f0f0f0;
+            background: #2a2a2a;
+            color: #e0e0e0;
             padding: 3px 5px;
             border-radius: 3px;
         }
@@ -51,24 +56,34 @@
         }
 
         .diagram img {
-            border: 1px solid #ddd;
+            border: 1px solid #444;
             padding: 10px;
-            background: #f9f9f9;
+            background: #1a1a1a;
         }
 
         .highlight {
-            background: #e7f3ff;
+            background: #1e3a5f;
             border-left: 5px solid #2196F3;
             padding: 10px;
             margin: 20px 0;
         }
 
         .code-block {
-            background: #f6f6f6;
-            border: 1px solid #ccc;
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #444;
             padding: 15px;
             margin: 20px 0;
             overflow-x: auto;
+        }
+
+        a {
+            color: #2470ce;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -98,7 +113,7 @@
                             <h2>3. Methodology</h2>
                             <h3>3.1 Data Acquisition</h3>
                             <p>
-                                To ensure realistic testing conditions, simulated mines, including TM-62, PFM-1, OZM, and PMN-2 types, were constructed using 3D printing and materials mimicking real mines’ physical and dielectric properties. These replicas were strategically deployed in controlled environments, such as open fields and vegetated areas, to simulate various scenarios. Data collection was conducted using DJI Mavic 2 Pro and Parrot Bluegrass drones, capturing imagery at multiple altitudes (e.g., 10m, 20m, and 50m) and under varying lighting and weather conditions to create a comprehensive dataset.
+                                To ensure realistic testing conditions, simulated mines, including TM-62, PFM-1, OZM, and PMN-2 types, were constructed using 3D printing and materials mimicking real mines' physical and dielectric properties. These replicas were strategically deployed in controlled environments, such as open fields and vegetated areas, to simulate various scenarios. Data collection was conducted using DJI Mavic 2 Pro and Parrot Bluegrass drones, capturing imagery at multiple altitudes (e.g., 10m, 20m, and 50m) and under varying lighting and weather conditions to create a comprehensive dataset.
                             </p>
                             <div class="image-container" align="center">
                                 <img src="/img/rgb_labels.jpg" width="80%" alt="RGB-labeled dataset example" style="margin:20px;">
@@ -117,7 +132,7 @@
                             <h2>4. Results</h2>
                             <h3>4.1 RGB Imaging</h3>
                             <p>
-                                The YOLO v5 model achieved notable success, with a precision-recall curve indicating robust detection of anti-personnel mines. Despite its effectiveness, the model’s accuracy diminished for smaller or partially obscured mines, underscoring the need for dataset expansion and diversity. The RGB-based approach proved cost-effective and relatively easy to implement, relying solely on commercially available drones and cameras.
+                                The YOLO v5 model achieved notable success, with a precision-recall curve indicating robust detection of anti-personnel mines. Despite its effectiveness, the model's accuracy diminished for smaller or partially obscured mines, underscoring the need for dataset expansion and diversity. The RGB-based approach proved cost-effective and relatively easy to implement, relying solely on commercially available drones and cameras.
                             </p>
                             <div align="center">
                                 <img src="/img/precision_recall_curve.png" width="80%" alt="Precision-Recall Curve" style="margin:20px;">

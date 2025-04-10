@@ -10,31 +10,36 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
         }
         h1 {
             font-size: 36px;
-            color: #2c3e50;
+            color: #ffffff;
         }
         h2 {
             font-size: 28px;
-            color: #34495e;
+            color: #ffffff;
         }
         h3 {
             font-size: 22px;
-            color: #16a085;
+            color: #2470ce;
         }
         p {
             margin: 10px 0;
+            color: rgba(255, 255, 255, 0.8);
         }
         ul {
             margin: 10px 0;
             padding-left: 20px;
+            color: rgba(255, 255, 255, 0.8);
         }
         ul li {
             margin: 5px 0;
         }
         code {
-            background-color: #f4f4f4;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
             padding: 2px 4px;
             font-family: monospace;
         }
@@ -44,21 +49,30 @@
             margin: 20px 0;
         }
         table, th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #444;
         }
         th, td {
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #f8f8f8;
+            background-color: #2a2a2a;
+            color: #ffffff;
         }
         .code-block {
-            background-color: #f4f4f4;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
             padding: 10px;
-            border-left: 3px solid #3498db;
+            border-left: 3px solid #2470ce;
             font-family: monospace;
             overflow-x: auto;
+        }
+        a {
+            color: #2470ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -166,7 +180,7 @@
     </ul>
     <p><b>Challenges and Solutions:</b></p>
     <ul>
-        <li><b>Precision Alignment:</b> The Mirobot’s 0.2mm repeatability ensures precise cube placement.</li>
+        <li><b>Precision Alignment:</b> The Mirobot's 0.2mm repeatability ensures precise cube placement.</li>
         <li><b>Variable Cube Sizes:</b> The VLM adjusts the stacking plan to maintain balance when cube sizes vary.</li>
     </ul>
 
@@ -211,7 +225,7 @@
     </ul>
 
     <h3>7.2 Workspace Constraints</h3>
-    <p><b>Challenge:</b> The camera’s field of view and the robotic arm’s reach limit workspace size.</p>
+    <p><b>Challenge:</b> The camera's field of view and the robotic arm's reach limit workspace size.</p>
     <p><b>Solution:</b></p>
     <ul>
         <li>Mounting the camera on an adjustable rig for fine-tuning position.</li>
@@ -222,7 +236,7 @@
     <p><b>Challenge:</b> High-resolution image processing and real-time VLM operations are computationally intensive.</p>
     <p><b>Solution:</b></p>
     <ul>
-        <li>Downsampling depth data when high resolution isn’t required.</li>
+        <li>Downsampling depth data when high resolution isn't required.</li>
         <li>Using mixed-precision computation and deploying the VLM on a GPU to improve inference speed.</li>
     </ul>
 
@@ -236,7 +250,7 @@
     <p><b>Key Insights:</b></p>
     <ul>
         <li>Combining depth and RGB data significantly enhanced object detection and segmentation.</li>
-        <li>The Mirobot’s precision enabled reliable execution of complex tasks.</li>
+        <li>The Mirobot's precision enabled reliable execution of complex tasks.</li>
         <li>The VLM allowed intuitive, natural language interaction, making the system accessible to non-technical users.</li>
     </ul>
 
