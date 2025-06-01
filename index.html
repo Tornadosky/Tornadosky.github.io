@@ -15,6 +15,144 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Toggle Buttons */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 0;
+        }
+        
+        .toggle-btn {
+            padding: 12px 30px;
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .toggle-btn:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .toggle-btn:last-child {
+            border-radius: 0 8px 8px 0;
+            border-left: none;
+        }
+        
+        .toggle-btn.active {
+            background: #2470ce;
+            color: #ffffff;
+            border-color: #2470ce;
+        }
+        
+        .toggle-btn:hover:not(.active) {
+            background: #333;
+            color: #ffffff;
+        }
+        
+        /* Papers Section */
+        .papers-list {
+            display: none;
+        }
+        
+        .papers-list.active {
+            display: block;
+        }
+        
+        .projects-list {
+            display: none;
+        }
+        
+        .projects-list.active {
+            display: block;
+        }
+        
+        .paper-item {
+            display: flex;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .paper-item:hover {
+            border-color: #2470ce;
+            transform: translateY(-2px);
+        }
+        
+        .paper-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .paper-content {
+            flex: 1;
+        }
+        
+        .paper-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .paper-authors {
+            font-size: 16px;
+            color: #2470ce;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .paper-venue {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        .paper-description {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .paper-link {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid #2470ce;
+            color: #2470ce;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .paper-link:hover {
+            background: #2470ce;
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 
@@ -295,13 +433,19 @@
         <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
         <tr>
         <td>
-            <h2 style="color: #ffffff; font-size: 30px; margin-bottom: 16px; line-height: 1.2;" class="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200"> My Projects </h2>
+            <h2 style="color: #ffffff; font-size: 30px; margin-bottom: 16px; line-height: 1.2;" class="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200"> My Work </h2>
             <hr style="border-color: #333;">
 
-            <!-- <h3>Computer Vision</h3> -->
+            <!-- Toggle Buttons -->
+            <div class="toggle-container">
+                <div class="toggle-btn active" onclick="showProjects()">Projects</div>
+                <div class="toggle-btn" onclick="showPapers()">Papers</div>
+            </div>
+            
             <br>
             
-            <div class="projects-list">
+            <!-- Projects Section -->
+            <div class="projects-list active" id="projects-section">
                 <!-- Lawn Mower -->
                 <div class="project-row">
                     <div class="project-image-container">
@@ -874,10 +1018,64 @@
                 <!-- Add more projects as needed -->
 
             </div>
+            
+            <!-- Papers Section -->
+            <div class="papers-list" id="papers-section">
+                <!-- RLBenchNet Paper -->
+                <div class="paper-item">
+                    <img src="img/benchnetrl-logo.png" alt="RLBenchNet Paper" class="paper-image">
+                    <div class="paper-content">
+                        <div class="paper-title">RLBenchNet: The Right Network for the Right Reinforcement Learning Task</div>
+                        <div class="paper-authors">Ivan Smirnov, Shangding Gu</div>
+                        <div class="paper-venue">arXiv preprint arXiv:2505.15040, 2025</div>
+                        <div class="paper-description">
+                            We systematically investigate the performance of several neural network architectures in reinforcement learning tasks, including LSTM, MLP, Mamba/Mamba-2, Transformer-XL, Gated Transformer-XL, and GRU. Through comprehensive evaluation across continuous control, discrete decision-making, and memory-based environments, we identify architecture-specific strengths and limitations. Our results reveal that MLPs excel in fully observable tasks, recurrent architectures offer robust performance in partially observable environments, and Mamba models achieve 4.5x higher throughput than LSTM while maintaining comparable performance.
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://arxiv.org/abs/2505.15040" class="paper-link" target="_blank">Paper</a>
+                            <a href="https://github.com/SafeRL-Lab/BenchNetRL" class="paper-link" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PPO Mamba Poster -->
+                <div class="paper-item">
+                    <img src="img/ppo_mamba_onepager.png" alt="PPO Mamba Poster" class="paper-image">
+                    <div class="paper-content">
+                        <div class="paper-title">PPO with Mamba: Towards Robust Reinforcement Learning</div>
+                        <div class="paper-authors">Ivan Smirnov</div>
+                        <div class="paper-venue">Bachelor Thesis Poster, Technische Hochschule Deggendorf, 2025</div>
+                        <div class="paper-description">
+                            This poster presents the key findings from my bachelor thesis research on integrating Mamba state-space models with Proximal Policy Optimization (PPO) for reinforcement learning. The work demonstrates how Mamba's efficient sequence modeling capabilities can enhance policy learning in complex environments while maintaining computational efficiency. The research explores performance comparisons across various RL benchmarks and highlights the advantages of state-space models in handling long-term dependencies in sequential decision-making tasks.
+                        </div>
+                        <div class="paper-links">
+                            <a href="doc/ppo_mamba.pdf" class="paper-link" target="_blank">Poster PDF</a>
+                            <a href="html/literature.html" class="paper-link" target="_blank">More Works</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HPC Poster -->
+                <div class="paper-item">
+                    <img src="img/poster_v8.jpg" alt="HPC Poster" class="paper-image">
+                    <div class="paper-content">
+                        <div class="paper-title">Comparative Overview of HPC Frameworks for CPU/GPU Programming</div>
+                        <div class="paper-authors">Ivan Smirnov</div>
+                        <div class="paper-venue">FuT3ch Symposium, May 7-8, 2025</div>
+                        <div class="paper-description">
+                            This poster presents a comprehensive analysis of High-Performance Computing (HPC) frameworks and their applications in CPU/GPU programming paradigms. The work explores various parallel computing frameworks, performance optimization techniques, and benchmarking results across different hardware architectures. Special focus is given to emerging technologies in quantum computing integration and their potential impact on traditional HPC workflows, providing insights for researchers and practitioners in the field of computational science.
+                        </div>
+                        <div class="paper-links">
+                            <a href="doc/poster_v8.pdf" class="paper-link" target="_blank">Poster PDF</a>
+                            <a href="html/literature.html" class="paper-link" target="_blank">More Works</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    </td>
-    </tr>
-    </table>
+        </td>
+        </tr>
+        </table>
     </div>
 
     <br>
@@ -888,6 +1086,30 @@
 
     <br>
     <br>
+
+    <script>
+        function showProjects() {
+            // Hide papers section
+            document.getElementById('papers-section').classList.remove('active');
+            // Show projects section
+            document.getElementById('projects-section').classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function showPapers() {
+            // Hide projects section
+            document.getElementById('projects-section').classList.remove('active');
+            // Show papers section
+            document.getElementById('papers-section').classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
